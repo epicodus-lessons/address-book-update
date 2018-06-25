@@ -4,7 +4,7 @@ The following is a proposed rewrite of the Address Book lessons in week 4. Here 
 * Mock a database by creating an AddressBook constructor that is a global variable. This gives students some introduction to database concepts and also avoids convoluted use of `this` to identify contacts.
 * Introduce to more advanced jQuery concepts: assigning dynamic IDs, event bubbling/propagation, event delegation. Value added curriculum! They won't be expected to incorporate it in the Friday independent project.
 
-# Building an Address Book I
+## Building an Address Book I: Adding Our First Constructor and Prototype Method
 
 Let's build an address book with contacts using constructors and prototype methods. We'll focus on business logic for now. We won't use jQuery or create any user interface logic until after we've written our business logic.
 
@@ -38,7 +38,7 @@ Assuming that we've stored a `Contact` object inside a variable named `contact`,
 
 Now that we've created a constructor for `Contact` and a simple prototype method that can only be called on `Contact` objects, let's move on to constructing the address book itself.
 
-Building an Address Book II
+## Building an Address Book II: Adding Prototype Methods
 
 In a real world application, we'd save our contacts in a database. However, we aren't working with databases yet. Instead, we'll create an address book and make it a global variable. That way, we can save our contacts inside it. While we generally want to avoid working with global variables, we make an exception here because we're using this global variable to mimic a database.
 
@@ -107,7 +107,7 @@ First, we make a change to our `AddressBook` constructor. It now has a `currentI
 
 We can now create a `Contact` and add it to our `AddressBook` "database". When we do so, it will have a unique ID. It doesn't have the complexity or efficiency of a real database, but soon we'll be able to use our `AddressBook` to retrieve specific contacts just as we would with an actual database.
 
-Building an Address Book III
+## Building an Address Book III: Finding Contacts
 
 We can now add a `Contact` to our `AddressBook`, but what if we want to find a specific contact? We should have a `find()` method that allows us to find a record by ID. Let's write one now. It should be on the `AddressBook` prototype because that's where we're trying to find the specific `Contact`.
 
@@ -185,7 +185,7 @@ AddressBook.prototype.findContact = function(id) {
 
 You can also experiment with adding other methods as well. For instance, try adding an `update()` method on the `Contact` prototype. The main focus this week is constructors and prototype methods, so we encourage you to focus on this. When working with business logic, make sure to test it in the console before incorporating it into your UI logic.
 
-Building an Address Book IV
+## Building an Address Book IV: Adding UI Logic
 
 We now have a very simple codebase that will allow us to create contacts and add, delete, and find them in an address book. Let's start building out the UI. In the process, we'll experiment with adding dynamic elements to the DOM and learn about event bubbling and event delegation. These are more advanced jQuery techniques and concepts and you won't be expected to apply them to this Friday's independent project. The primary focus will be constructors and prototype methods (along with a basic UI that uses jQuery). However, you are encouraged to experiment with these more advanced concepts as they'll make you a better coder in the long run.
 
@@ -342,7 +342,7 @@ $(document).ready(function() {
 
 Our script has all the constructors and prototype methods we've created so far. There's also some basic code to submit a form and then log all the contacts in our address book to the console. We're ready for the next step: displaying contacts in our application and adding dynamic IDs.
 
-Address Book V
+## Building an Address Book V: Creating Dynamic IDs and jQuery Best Practices
 
 Let's add code to display all the contacts onscreen. We'll attach the records to our unordered list of `#contacts`. We'll start by writing a method with nothing in it.
 
@@ -412,7 +412,7 @@ $(document).ready(function() {
 
 Each time we add a new contact, the page will update the list of contacts and we'll see their first and last names onscreen! If we open Chrome Developer Tools and inspect the elements on the page, we'll see that each contact has a unique ID that corresponds to the contact's assigned ID. In the next lesson, we'll add UI functions that will allow us to display the detailed information of an individual contact onscreen.
 
-Address Book VI: Event Delegation with jQuery
+## Building an Address Book VI: Event Delegation with jQuery
 
 We can now dynamically add contacts to our list. However, what if we want to see additional details about each contact? It would be nice if we could click on a contact and get that contact's details. That's what we'll do next. Before we do, we'll dive into some new concepts: **event bubbling** and **event delegation**.
 
@@ -478,7 +478,7 @@ Now, if we click any `<li>` inside of `"ul#contacts"`, even if it's dynamically 
 
 In the next lesson, we'll create a function to show a contact's detail. We'll also add code to delete contacts to further practice with event delegation.
 
-Address Book VII
+## Building an Address Book VII: More Practice with Event Delegation
 
 In the last lesson, we used event delegation to target dynamically created `li` elements. Let's actually create some code to show a contact's detail. We'll start by making a modification to our function for attaching event listeners:
 
